@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Swiss Grid Tools</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">Climate Data Fragments <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/swiss-grid-tools.html" rel="bookmark"
+                   title="Permalink to Swiss Grid Tools">Swiss Grid Tools</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-03-06T00:00:00+01:00">
+                Fri 06 March 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/harald-von-waldow.html"> Harald von Waldow</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>I just <a href="https://github.com/C2SM/SwissGrid">published a utility class</a>
+to facilitate coordinate transformations between latlon (WGS84, or
+ETRS89, not so clear) and the "old" Swiss reference frame,
+LV03/CH1903. The class allows transformations using either the PROJ.4
+library, or it uses the
+<a href="http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/software/products/m2m.html">REST-API provied by swisstopo</a>. Comparing
+the two gives some peace of mind regarding correctness: The difference
+is mostly about 1 centimeter. Still need to put the "new" LV95/CH1903+
+into it.</p>
+<p>Example:<br /></p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">WGS84</span><span class="o">-</span><span class="n">LV03</span> <span class="kn">import</span> <span class="nn">Convert</span>
+
+<span class="n">bern</span> <span class="o">=</span> <span class="p">(</span><span class="mf">7.43861</span><span class="p">,</span> <span class="mf">46.951</span><span class="p">)</span>
+<span class="n">zurich</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8.55</span><span class="p">,</span> <span class="mf">47.37</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">Convert</span><span class="p">()</span>
+<span class="n">C</span><span class="o">.</span><span class="n">convert</span><span class="p">([</span><span class="n">bern</span><span class="p">,</span> <span class="n">zurich</span><span class="p">])</span>
+
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> 
+<span class="p">[(</span><span class="mf">599998.2101365564</span><span class="p">,</span> <span class="mf">199990.7321469287</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">683940.6285646699</span><span class="p">,</span> <span class="mf">247167.5578803884</span><span class="p">)]</span>
+</pre></div>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/about.html">About</a></li>
+		<li><a href="/category/misc.html">misc</a></li>
+		<li><a href="/category/python.html">Python</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="/tag/visualization.html">visualization</a></li>
+</ul>
+
+
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>

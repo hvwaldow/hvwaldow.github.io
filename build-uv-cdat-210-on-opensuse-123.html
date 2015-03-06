@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Build UV-CDAT 2.1.0 on OpenSuSE 12.3</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">Climate Data Fragments <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/build-uv-cdat-210-on-opensuse-123.html" rel="bookmark"
+                   title="Permalink to Build UV-CDAT 2.1.0 on OpenSuSE 12.3">Build UV-CDAT 2.1.0 on OpenSuSE 12.3</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-01-29T16:34:00+01:00">
+                Thu 29 January 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/harald-von-waldow.html"> Harald von Waldow</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <p>Just succeeded to build <a class="reference external" href="https://github.com/UV-CDAT/uvcdat">UV-CDAT</a>
+on my SuSE 12.3. A couple of problems were solved by David Lonie, and
+other developers, thanks!</p>
+<p>Here is a script that results in a working build here.</p>
+<pre class="literal-block">
+#!/bin/bash
+
+# receipe to build UVCDAT release 2.1.0
+# includes specifics for OpenSuSE 12.3
+# tested on OpenSuSE 12.3
+# Should work for other platforms as well
+# Harald von Waldow &lt;hvw&#64;env.ethz.ch&gt; - 2015-01-29
+# Big kudos to David Lonie who figured it all out
+# and to all members of the extremely responsive UVCDAT developer team!
+
+## Modify this #######################################################################
+# Where you want to build
+SOURCE_ROOT=&quot;/lhome/hvwaldow/src/uvcdat&quot;
+DATE=`date +&quot;%y-%m-%d&quot;`
+# What to download; check if still up-to-date
+DOWNLOAD_URL=&quot;https://github.com/UV-CDAT/uvcdat/archive/release-2.1.0.zip&quot;
+VERSION=&quot;2.1.0&quot;
+# Where you want UVCDAT to be installed
+# Is supposed not to exist yet
+DESTINATION=&quot;/lhome/hvwaldow/uvcdat-$VERSION&quot;
+# ####################################################################################
+
+cd $SOURCE_ROOT
+wget $DOWNLOAD_URL
+ARCHIVE=`basename $DOWNLOAD_URL`
+unzip $ARCHIVE
+SOURCEDIR=`unzip -Z -1 $ARCHIVE |head -n1`
+SOURCEDIR=`basename $SOURCEDIR`
+mkdir build-uvcdat
+cd build-uvcdat
+# environment variables that interfere with the build process
+unset PYTHONSTARTUP
+unset CONFIG_SITE
+# Patch UVMETRICS installation
+sed -i '/^set(nm UVCMETRICS)/aset\(USR_ENVS &quot;LD_LIBRARY_PATH=${CMAKE_INSTALL_PREFIX}/lib:${cdat_EXTERNALS}/lib:$ENV{LD_LIBRARY_PATH}&quot;)' \
+    ${SOURCE_ROOT}/$SOURCEDIR/CMake/cdat_modules/uvcmetrics_external.cmake
+cmake  ${SOURCE_ROOT}/$SOURCEDIR -DGIT_PROTOCOL=git:// -DCMAKE_INSTALL_PREFIX=$DESTINATION
+# adapt to the number of cores you can use
+make -j8
+#
+# build fails with
+# &quot;error: ‘GLintptr’ has not been declared&quot;
+#
+# patching VTK
+sed -i 's,//#define GLX_GLXEXT_LEGACY,#define GLX_GLXEXT_LEGACY,' build/VTK/Rendering//OpenGL/vtkXOpenGLRenderWindow.cxx
+# continue build
+make -j8
+
+# run that before running uvcdat
+# source $DESTINATION/bin/setup_runtime.sh
+# put in .bashrc or so ?
+</pre>
+
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/about.html">About</a></li>
+		<li><a href="/category/misc.html">misc</a></li>
+		<li><a href="/category/python.html">Python</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="/tag/visualization.html">visualization</a></li>
+</ul>
+
+
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
