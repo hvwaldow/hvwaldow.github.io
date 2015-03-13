@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Climate Data Fragments</title><link href="http://hvwaldow.github.io/" rel="alternate"></link><link href="http://hvwaldow.github.io/feeds/misc.atom.xml" rel="self"></link><id>http://hvwaldow.github.io/</id><updated>2015-03-13T00:00:00+01:00</updated><entry><title>Proposal: Capacity building for sustainable scientific programming</title><link href="http://hvwaldow.github.io/proposal-capacity-building-for-sustainable-scientific-programming.html" rel="alternate"></link><updated>2015-03-13T00:00:00+01:00</updated><author><name>Harald von Waldow</name></author><id>tag:hvwaldow.github.io,2015-03-13:proposal-capacity-building-for-sustainable-scientific-programming.html</id><summary type="html">&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Many workgroups complain about a lacking culture of code-sharing and
+code-reuse. This leads to inefficiencies in the workflow of scientific
+production. An initiative is proposed that a) provides pieces of
+immediately useful code of a quality suited for sharing and to be used
+in b) associated teaching activities to develop scientific programming
+skills and know-how to foster a culture of scientific programming that
+produces high-quality code, embraces code-reuse, and is aware of
+state-of-the art development tools and&amp;nbsp;practices.&lt;/p&gt;
+&lt;h2&gt;Problem&amp;nbsp;statement&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Many groups observe that PhD students and Postdocs are constantly
+    “re-inventing” the wheel.&lt;/strong&gt; In any group there are standard tasks
+    that should be solved in a sufficiently generic way, implemented
+    cleanly and and documented sufficiently verbose, so that dealing
+    with that specific task does not involve writing a new program in
+    the future. This in general does not happen, which leads to a
+    reduced efficiency in producing research&amp;nbsp;output.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Standardized plots and diagnostics can help to interpret results
+    across different model runs, researchers, workgroups.&lt;/strong&gt; Often the
+    choice of the color scale alone, not to mention possible
+    transformations of values or axes (projections) make the comparison
+    of different plots and their interpretation unnecessarily&amp;nbsp;difficult.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;What does not&amp;nbsp;work&lt;/h2&gt;
+&lt;p&gt;The development of a software package that solves all problems once
+and for all is tempting, frequently attempted, and always fails. In
+fact, a great many software packages for the tasks mentioned above
+already exist. Their application however remains fragmented, sometimes
+because researchers are not aware of the existence of the particular
+package they need, but frequently because the
+&lt;a href="http://www.joelonsoftware.com/articles/fog0000000007.html"&gt;&amp;#8220;Not-Invented-Here&amp;#8221; Syndrome&lt;/a&gt;
+is (for good reasons) a strong force in research&amp;nbsp;environments.&lt;/p&gt;
+&lt;p&gt;One reason that the monolithic approach does not work is the need of
+researchers to understand exactly what they are doing, and that they
+often have the desire to determine a software’s operation to the
+smallest&amp;nbsp;detail.&lt;/p&gt;
+&lt;p&gt;Therefore any pre-canned “black-box”&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; approach reaches its limit
+quickly, and researchers resort to implementing the algorithm
+themselves from scratch. The result is an ad-hoc piece of code,
+undocumented, opaque to everybody else, non-reusable, written in
+whatever language the researcher is most comfortable with, and
+frequently containing bugs that cost time later in the&amp;nbsp;project.&lt;/p&gt;
+&lt;h2&gt;Our&amp;nbsp;approach&lt;/h2&gt;
+&lt;p&gt;The hypothesis of this proposal is that the solution to the problem
+does not lie in writing just the right software, but in influencing
+workgroup research culture and practices and in promoting the
+development of relevant individual state-of-the art programming&amp;nbsp;skills.&lt;/p&gt;
+&lt;p&gt;There are workgroups that have such a culture. From anecdotal evidence
+it seems that this always involves a person with the dedicated job to
+maintain an archive/software repository and curate the group’s
+software output (e.g. &lt;em&gt;dyntools&lt;/em&gt; in the Atmospheric Dynamics
+group). There was a strong consensus across many &lt;span class="caps"&gt;C2SM&lt;/span&gt;-workgroups at a
+recent meeting, that a structural changes in hiring-policy are
+required for sustainable improvements of the scientific code &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; data
+situation. Until then, however, &lt;span class="caps"&gt;C2SM&lt;/span&gt; could play a similar (yet clearly
+limited) role for groups that do not have the necessary&amp;nbsp;resources.&lt;/p&gt;
+&lt;p&gt;The focus of the proposed project lies on anchoring a culture of
+software re-use in the respective workgroups, on enabling the
+development of relevant programming skills through a &lt;strong&gt;tutorial&lt;/strong&gt;,
+&lt;strong&gt;workshops&lt;/strong&gt;, and relevant &lt;strong&gt;example code&lt;/strong&gt;.  &lt;strong&gt;The “example code”
+plays a key role&lt;/strong&gt;, as it should serve, next to being a teaching
+device, &lt;strong&gt;as an immediately applicable program that responds to
+specific re-occurring tasks in the respective workgroup&lt;/strong&gt;. It is
+different from &amp;#8220;pre-canned&amp;#8221; solutions, in that it is very well
+written, extremely well documented, and interlinked with other
+programming&amp;nbsp;resources.&lt;/p&gt;
+&lt;p&gt;The tutorial will, for example, cover a simple modification to the
+example script, inclusive its submission to a version control&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;The overall aim is to supply a useful piece of software to lure
+(mostly beginning) researchers into building their individual code on
+tried and tested foundations, instead of re-inventing the wheel, and
+ideally to do so in a way that lets others profit from their&amp;nbsp;work.&lt;/p&gt;
+&lt;p&gt;The project would use Python and R as main languages, which doesn’t
+prevent the inclusion of &lt;span class="caps"&gt;CDO&lt;/span&gt;, &lt;span class="caps"&gt;NCO&lt;/span&gt;, bash, or other external tools if
+necessary. In particular, exploring toolchain options ranging from
+NetCDF focussed command-line tools in the climate modelling community
+to &lt;span class="caps"&gt;GIS&lt;/span&gt; tools, such as &lt;span class="caps"&gt;QGIS&lt;/span&gt;, used by many impact modelling groups,
+could have the potential to boost the technical know-how&amp;nbsp;available.&lt;/p&gt;
+&lt;h2&gt;Requirement&lt;/h2&gt;
+&lt;p&gt;A sufficient large number of &lt;span class="caps"&gt;C2SM&lt;/span&gt;-groups (min. 4?) that actively
+collaborate, i.e. contribute (wo)man-power towards the specification
+of the example code, coding, testing, documenting,&amp;nbsp;&amp;#8230;&lt;/p&gt;
+&lt;h2&gt;Deliverables&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Code that solves specific problems&lt;/strong&gt; (non exhaustive!) for each
+    participating workgroup “out-of-the-box”, yet is well written and
+    documented in a way that makes it an attractive starting point for
+    own&amp;nbsp;developments.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;A tutorial&lt;/strong&gt; that uses these examples to teach basic techniques
+    and enable and motivate researchers to expand the stock of useful&amp;nbsp;example-scripts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A software &lt;strong&gt;repository&lt;/strong&gt; that holds code and documentation, can be
+    accessed “reading and writing” by &lt;span class="caps"&gt;C2SM&lt;/span&gt; attached researchers and is
+    maintained by &lt;span class="caps"&gt;C2SM&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A &lt;span class="caps"&gt;C2SM&lt;/span&gt; run &lt;strong&gt;course/workshop&lt;/strong&gt; based on the&amp;nbsp;tutorial.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;”Black-box” here refers also to code that is available, e.g.
+&lt;a href="https://wiki.c2sm.ethz.ch/Wiki/VisNCLCosmoLibrary"&gt;cosmolib&lt;/a&gt;, but
+is too costly to understand well enough to have confidence that it
+is doing the right thing and to be able to modify it. Cosmolib’s
+main script consists of about 5000 lines of &lt;span class="caps"&gt;NCL&lt;/span&gt; and is
+incompletely documented. But makes
+&lt;a href="https://wiki.c2sm.ethz.ch/Wiki/VisNCLCosmoLibraryExamples"&gt;extremely nice figures&lt;/a&gt;!&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary><category term="education"></category><category term="data anlysis"></category><category term="programming"></category></entry><entry><title>Build UV-CDAT 2.1.0 on OpenSuSE 12.3</title><link href="http://hvwaldow.github.io/build-uv-cdat-210-on-opensuse-123.html" rel="alternate"></link><updated>2015-01-29T16:34:00+01:00</updated><author><name>Harald von Waldow</name></author><id>tag:hvwaldow.github.io,2015-01-29:build-uv-cdat-210-on-opensuse-123.html</id><summary type="html">&lt;p&gt;Just succeeded to build &lt;a class="reference external" href="https://github.com/UV-CDAT/uvcdat"&gt;&lt;span class="caps"&gt;UV&lt;/span&gt;-&lt;span class="caps"&gt;CDAT&lt;/span&gt;&lt;/a&gt;
+on my SuSE 12.3. A couple of problems were solved by David Lonie, and
+other developers,&amp;nbsp;thanks!&lt;/p&gt;
+&lt;p&gt;Here is a script that results in a working build&amp;nbsp;here.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+#!/bin/bash
+
+# receipe to build UVCDAT release 2.1.0
+# includes specifics for OpenSuSE 12.3
+# tested on OpenSuSE 12.3
+# Should work for other platforms as well
+# Harald von Waldow &amp;lt;hvw&amp;#64;env.ethz.ch&amp;gt; - 2015-01-29
+# Big kudos to David Lonie who figured it all out
+# and to all members of the extremely responsive UVCDAT developer team!
+
+## Modify this #######################################################################
+# Where you want to build
+SOURCE_ROOT=&amp;quot;/lhome/hvwaldow/src/uvcdat&amp;quot;
+DATE=`date +&amp;quot;%y-%m-%d&amp;quot;`
+# What to download; check if still up-to-date
+DOWNLOAD_URL=&amp;quot;https://github.com/UV-CDAT/uvcdat/archive/release-2.1.0.zip&amp;quot;
+VERSION=&amp;quot;2.1.0&amp;quot;
+# Where you want UVCDAT to be installed
+# Is supposed not to exist yet
+DESTINATION=&amp;quot;/lhome/hvwaldow/uvcdat-$VERSION&amp;quot;
+# ####################################################################################
+
+cd $SOURCE_ROOT
+wget $DOWNLOAD_URL
+ARCHIVE=`basename $DOWNLOAD_URL`
+unzip $ARCHIVE
+SOURCEDIR=`unzip -Z -1 $ARCHIVE |head -n1`
+SOURCEDIR=`basename $SOURCEDIR`
+mkdir build-uvcdat
+cd build-uvcdat
+# environment variables that interfere with the build process
+unset PYTHONSTARTUP
+unset CONFIG_SITE
+# Patch UVMETRICS installation
+sed -i '/^set(nm UVCMETRICS)/aset\(USR_ENVS &amp;quot;LD_LIBRARY_PATH=${CMAKE_INSTALL_PREFIX}/lib:${cdat_EXTERNALS}/lib:$ENV{LD_LIBRARY_PATH}&amp;quot;)' \
+    ${SOURCE_ROOT}/$SOURCEDIR/CMake/cdat_modules/uvcmetrics_external.cmake
+cmake  ${SOURCE_ROOT}/$SOURCEDIR -DGIT_PROTOCOL=git:// -DCMAKE_INSTALL_PREFIX=$DESTINATION
+# adapt to the number of cores you can use
+make -j8
+#
+# build fails with
+# &amp;quot;error: ‘GLintptr’ has not been declared&amp;quot;
+#
+# patching VTK
+sed -i 's,//#define GLX_GLXEXT_LEGACY,#define GLX_GLXEXT_LEGACY,' build/VTK/Rendering//OpenGL/vtkXOpenGLRenderWindow.cxx
+# continue build
+make -j8
+
+# run that before running uvcdat
+# source $DESTINATION/bin/setup_runtime.sh
+# put in .bashrc or so ?
+&lt;/pre&gt;
+</summary><category term="visualization"></category></entry></feed>

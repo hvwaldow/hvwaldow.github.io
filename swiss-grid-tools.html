@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-        <title>Swiss Grid Tools</title>
+        <title>Swiss Grid Tools</title>
         <meta charset="utf-8" />
 
 
@@ -37,6 +37,7 @@
               <ul class="columns">
                 <li><a href="/">Home</a></li>
 
+                <li><a href="/pages/about.html">About</a></li>
 
               </ul>
             </div>
@@ -50,7 +51,7 @@
             <header>
               <h2 class="entry-title">
                 <a href="/swiss-grid-tools.html" rel="bookmark"
-                   title="Permalink to Swiss Grid Tools">Swiss Grid Tools</a></h2>
+                   title="Permalink to Swiss Grid Tools">Swiss Grid&nbsp;Tools</a></h2>
            
             </header>
             <footer class="post-info">
@@ -63,14 +64,14 @@
             </footer><!-- /.post-info -->
             <div class="entry-content">
               <p>I just <a href="https://github.com/C2SM/SwissGrid">published a utility class</a>
-to facilitate coordinate transformations between latlon (WGS84, or
-ETRS89, not so clear) and the "old" Swiss reference frame,
-LV03/CH1903. The class allows transformations using either the PROJ.4
+to facilitate coordinate transformations between latlon (<span class="caps">WGS84</span>, or
+<span class="caps">ETRS89</span>, not so clear) and the &#8220;old&#8221; Swiss reference frame,
+<span class="caps">LV03</span>/<span class="caps">CH1903</span>. The class allows transformations using either the <span class="caps">PROJ</span>.4
 library, or it uses the
-<a href="http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/software/products/m2m.html">REST-API provied by swisstopo</a>. Comparing
+<a href="http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/software/products/m2m.html"><span class="caps">REST</span>-<span class="caps">API</span> provied by swisstopo</a>. Comparing
 the two gives some peace of mind regarding correctness: The difference
-is mostly about 1 centimeter. Still need to put the "new" LV95/CH1903+
-into it.</p>
+is mostly about 1 centimeter. Still need to put the &#8220;new&#8221; <span class="caps">LV95</span>/<span class="caps">CH1903</span>+
+into&nbsp;it.</p>
 <p>Example:<br /></p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">WGS84</span><span class="o">-</span><span class="n">LV03</span> <span class="kn">import</span> <span class="nn">Convert</span>
 
@@ -93,19 +94,20 @@ into it.</p>
 <h4>Pages</h4>
 
  <ul>
+      <li><a href="/pages/about.html">About</a></li>
   </ul>
 
-<h4>Categories</h4>
-<ul>
-		<li><a href="/category/education.html">Education</a></li>
-		<li><a href="/category/misc.html">misc</a></li>
-		<li><a href="/category/python.html">Python</a></li>
-</ul>
 
 
 <h4>Tags</h4>
 	<ul>
+	    <li class="tag-4"><a href="/tag/data-anlysis.html">data anlysis</a></li>
+	    <li class="tag-4"><a href="/tag/programming.html">programming</a></li>
+	    <li class="tag-4"><a href="/tag/education.html">education</a></li>
+	    <li class="tag-4"><a href="/tag/python.html">Python</a></li>
+	    <li class="tag-4"><a href="/tag/gis.html">GIS</a></li>
 	    <li class="tag-4"><a href="/tag/visualization.html">visualization</a></li>
+	    <li class="tag-4"><a href="/tag/cartography.html">cartography</a></li>
 </ul>
 
 
@@ -126,19 +128,25 @@ into it.</p>
           <div class="seven columns left-center">
 
                    <address id="about" class="vcard body">
-                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    Powered by <a href="http://getpelican.com/">Pelican</a>.
                     <br />
-                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    Based on the the theme <a target="_blank" href="https://github.com/getpelican/pelican-themes/tree/master/gum">"Gum"</a>
                     </address>
-          </div>
+	  </div>
 
 
           <div class="seven columns">
             <div class="row">
               <ul class="socbtns">
 
+                <li><div class="btn github_logo"><a href="https://github.com/c2sm"
+						    target="_blank"><img width="50" height="50"
+						  alt="GitHub" src="/theme/img/GitHub-Mark-64px.png"</a></div></li>
 
+  
+                <li><div class="btn twitter_logo"><a href="https://twitter.com/hvwaldow"
+			     target="_blank"><img width="50" height="50"
+						  alt="Twitter" src="/theme/img/Twitter_logo_black.png"></a></div></li>
 
 
 

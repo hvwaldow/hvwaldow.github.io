@@ -1695,18 +1695,6 @@ img {
   background: #00aced;
   border: 1px solid #00aced;
 }
-.btn.twitter_logo {
-  margin: 10px;
-}
-.btn.twitter_logo a{
-  background-color:#EEEEEE;
-}
-.btn.github_logo {
-  margin: 10px;
-}
-.btn.github_logo a {
-  background-color:#EEEEEE;
-}
 .btn.twitter:hover, .skiplink.twitter:hover {
   background: #21c2ff;
 }
