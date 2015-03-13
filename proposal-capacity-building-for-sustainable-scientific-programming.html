@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Proposal: Capacity building for sustainable scientific programming</title>
+        <meta charset="utf-8" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/pygment.css" />
+
+        <script src="/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="/">Climate Data Fragments <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+             
+              <ul class="columns">
+                <li><a href="/">Home</a></li>
+
+
+              </ul>
+            </div>
+
+<section id="content" class="body">
+
+   <div class="row">
+        <div class="eleven columns">
+
+
+            <header>
+              <h2 class="entry-title">
+                <a href="/proposal-capacity-building-for-sustainable-scientific-programming.html" rel="bookmark"
+                   title="Permalink to Proposal: Capacity building for sustainable scientific programming">Proposal: Capacity building for sustainable scientific programming</a></h2>
+           
+            </header>
+            <footer class="post-info">
+              <abbr class="published" title="2015-03-13T00:00:00+01:00">
+                Fri 13 March 2015
+              </abbr>
+              <address class="vcard author">By 
+                <a class="url fn" href="/author/harald-von-waldow.html"> Harald von Waldow</a>
+              </address>
+            </footer><!-- /.post-info -->
+            <div class="entry-content">
+              <h2>Potential scope</h2>
+<dl>
+<dt>Data</dt>
+<dd>Focused but not limited to gridded georeferenced data</dd>
+<dt>Collaborators</dt>
+<dd>All C2SM member’s groups</dd>
+<dt>Topics</dt>
+<dd>Data analysis and visualization, scientific programming skills, code re-use</dd>
+</dl>
+<h2>Problem statement</h2>
+<ol>
+<li>
+<p><strong>Many groups observe that PhD students and Postdocs are constantly
+    “re-inventing” the wheel.</strong> In any group there are standard tasks
+    that should be solved in a sufficiently generic way, implemented
+    cleanly and and documented sufficiently verbose, so that dealing
+    with that specific task does not involve writing a new program in
+    the future. This in general does not happen, which leads to a
+    reduced efficiency in producing research output.</p>
+</li>
+<li>
+<p><strong>Standardized plots and diagnostics can help to interpret results
+    across different model runs, researchers, workgroups.</strong> Often the
+    choice of the color scale alone, not to mention possible
+    transformations of values or axes (projections) make the comparison
+    of different plots and their interpretation unnecessarily difficult.</p>
+</li>
+</ol>
+<h2>What does not work</h2>
+<p>The development of a software package that solves all problems once
+and for all is tempting, frequently attempted, and always fails. In
+fact, a great many software packages for the tasks mentioned above
+already exist. Their application however remains fragmented, sometimes
+because researchers are not aware of the existence of the particular
+package they need, but frequently because the
+<a href="http://www.joelonsoftware.com/articles/fog0000000007.html">"Not-Invented-Here" Syndrome</a>
+is (for good reasons) a strong force in research environments.</p>
+<p>One reason that the monolithic approach does not work is the need of
+researchers to understand exactly what they are doing, and that they
+often have the desire to determine a software’s operation to the
+smallest detail.</p>
+<p>Therefore any pre-canned “black-box”<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> approach reaches its limit
+quickly, and researchers resort to implementing the algorithm
+themselves from scratch. The result is an ad-hoc piece of code,
+undocumented, opaque to everybody else, non-reusable, written in
+whatever language the researcher is most comfortable with, and
+frequently containing bugs that cost time later in the project.</p>
+<h2>Our approach</h2>
+<p>The hypothesis of this proposal is that the solution to the problem
+does not lie in writing just the right software, but in influencing
+workgroup research culture and practices and in promoting the
+development of relevant individual state-of-the art programming
+skills.</p>
+<p>There are workgroups that have such a culture. From anecdotal evidence
+it seems that this always involves a person with the dedicated job to
+maintain an archive/software repository and curate the group’s
+software output (e.g. <em>dyntools</em> in the Atmospheric Dynamics
+group). There was a strong consensus across many C2SM-workgroups at a
+recent meeting, that a structural changes in hiring-policy are
+required for sustainable improvements of the scientific code &amp; data
+situation. Until then, however, C2SM could play a similar (yet clearly
+limited) role for groups that do not have the necessary resources.</p>
+<p>The focus of the proposed project lies on anchoring a culture of
+software re-use in the respective workgroups, on enabling the
+development of relevant programming skills through a <strong>tutorial</strong>,
+<strong>workshops</strong>, and relevant <strong>example code</strong>.  <strong>The “example code”
+plays a key role</strong>, as it should serve, next to being a teaching
+device, <strong>as an immediately applicable program that responds to
+specific re-occurring tasks in the respective workgroup</strong>. It is
+different from "pre-canned" solutions, in that it is very well
+written, extremely well documented, and interlinked with other
+programming resources.</p>
+<p>The tutorial will, for example, cover a simple modification to the
+example script, inclusive its submission to a version control system.</p>
+<p>The overall aim is to supply a useful piece of software to lure
+(mostly beginning) researchers into building their individual code on
+tried and tested foundations, instead of re-inventing the wheel, and
+ideally to do so in a way that lets others profit from their work.</p>
+<p>The project would use Python and R as main languages, which doesn’t
+prevent the inclusion of CDO, NCO, bash, or other external tools if
+necessary. In particular, exploring toolchain options ranging from
+NetCDF focussed command-line tools in the climate modelling community
+to GIS tools, such as QGIS, used by many impact modelling groups,
+could have the potential to boost the technical know-how available.</p>
+<h2>Requirement</h2>
+<p>A sufficient large number of C2SM-groups (min. 4?) that actively
+collaborate, i.e. contribute (wo)man-power towards the specification
+of the example code, coding, testing, documenting, ...</p>
+<h2>Deliverables</h2>
+<ol>
+<li>
+<p><strong>Code that solves specific problems</strong> (non exhaustive!) for each
+    participating workgroup “out-of-the-box”, yet is well written and
+    documented in a way that makes it an attractive starting point for
+    own developments.</p>
+</li>
+<li>
+<p><strong>A tutorial</strong> that uses these examples to teach basic techniques
+    and enable and motivate researchers to expand the stock of useful
+    example-scripts.</p>
+</li>
+<li>
+<p>A software <strong>repository</strong> that holds code and documentation, can be
+    accessed “reading and writing” by C2SM attached researchers and is
+    maintained by C2SM.</p>
+</li>
+<li>
+<p>A C2SM run <strong>course/workshop</strong> based on the tutorial.</p>
+</li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>”Black-box” here refers also to code that is available, e.g.
+<a href="https://wiki.c2sm.ethz.ch/Wiki/VisNCLCosmoLibrary">cosmolib</a>, but
+is too costly to understand well enough to have confidence that it
+is doing the right thing and to be able to modify it. Cosmolib’s
+main script consists of about 5000 lines of NCL and is
+incompletely documented. But makes
+<a href="https://wiki.c2sm.ethz.ch/Wiki/VisNCLCosmoLibraryExamples">extremely nice figures</a>!&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+            </div><!-- /.entry-content -->
+
+
+        </div><!-- /.eleven.columns -->
+
+<div class="three columns">
+
+<h4>Pages</h4>
+
+ <ul>
+  </ul>
+
+<h4>Categories</h4>
+<ul>
+		<li><a href="/category/about.html">About</a></li>
+		<li><a href="/category/education.html">Education</a></li>
+		<li><a href="/category/misc.html">misc</a></li>
+		<li><a href="/category/python.html">Python</a></li>
+</ul>
+
+
+<h4>Tags</h4>
+	<ul>
+	    <li class="tag-4"><a href="/tag/visualization.html">visualization</a></li>
+</ul>
+
+
+
+</div> </div><!-- /.row -->
+
+
+</section>
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+    
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="/theme/js/libs/gumby.min.js"></script>
+  <script src="/theme/js/plugins.js"></script>
+</body>
+</html>
